@@ -49,7 +49,8 @@
 <li>posts published by the connected Page (text, image link, time, whether it is an ad);</li>
 <li>comments people leave on the connected Page's posts: comment text, time, comment ID, and the commenter's public name/ID where Facebook provides it;</li>
 <li>Messenger conversations between people and the connected Page: message text, attachments (image/file links), time, the person's Page-scoped ID and the name/profile picture Facebook returns, and the ad a conversation started from, if any;</li>
-<li>replies and messages the Page sends through Fang Labs.</li>
+<li>replies and messages the Page sends through Fang Labs;</li>
+<li>when the customer turns on automatic replies, replies the Page's admins have previously posted to comments and sent in Messenger, used to learn how that Page answers its customers.</li>
 </ul>
 <p>We do not access personal profiles, friends lists, Facebook Groups, or any Page that was not connected.</p>
 <h2 id="en-staff"><span class="n">3.</span>Data the business's staff create in Fang Labs</h2>
@@ -59,16 +60,19 @@
 <li>to show comments and messages to the customer's staff in a shared inbox, with queues, assignment and response-time targets;</li>
 <li>to let staff reply as the Page, and, when the customer turns it on, to hide or delete spam and scam comments on the customer's own Page (hiding is reversible; deleting needs a confirmation; every action is logged);</li>
 <li>to alert the customer's own team (for example in their LINE group) about urgent complaints or late replies, when the customer connects LINE;</li>
-<li>when the customer turns on AI features, to label comments and messages (topic, sentiment, urgency) and to draft replies that staff review before sending;</li>
+<li>when the customer turns on AI features, to label comments and messages (topic, sentiment, urgency) and to draft replies for staff;</li>
+<li>when the customer turns on automatic replies, to send replies on the customer's Page and in its Messenger automatically, for the topics the customer has chosen (see section 5);</li>
 <li>to produce reports for the customer about volume, topics and response times.</li>
 </ul>
 <p>We do not sell data, use it for advertising, or combine one customer's data with another's. A customer's data improves only that customer's own workspace.</p>
 <h2 id="en-ai"><span class="n">5.</span>AI processing</h2>
-<p>AI features are off by default and are switched on per workspace by the customer's admin. When on, the text of comments and messages (and the related post caption) is sent to OpenAI to produce labels and draft replies. Under OpenAI's API terms this data is not used to train OpenAI's models. Staff always review a draft before anything is sent; the AI never posts on its own.</p>
+<p>AI features are switched on per workspace by the customer's admin. When on, the text of comments and messages (and the related post caption) is sent to OpenAI to produce labels and draft replies.</p>
+<p>When the business switches on automatic replies, Fang Labs may send replies on the business's Page and in its Messenger automatically, without a staff member reviewing each one first. Replies are written in a style learned from that Page's past admin replies and the rules the business sets, and use only information the business has provided. The business chooses which topics are answered automatically (complaints are not answered automatically unless the business turns them on), can stop automatic replies at any time, and every automatic reply is logged. To produce these replies, the content of comments and messages and the Page's past admin replies are sent to OpenAI.</p>
+<p>Under OpenAI's API terms, data sent to OpenAI is not used to train OpenAI's models.</p>
 <h2 id="en-providers"><span class="n">6.</span>Service providers (sub-processors)</h2>
 <ul>
 <li><strong>Meta Platforms</strong> (Facebook, Messenger): the source of the data and the channel for replies.</li>
-<li><strong>OpenAI</strong> (USA): AI labels and drafts, only when the customer turns AI on.</li>
+<li><strong>OpenAI</strong> (USA): AI labels, drafts and automatic replies, only when the customer turns these features on.</li>
 <li><strong>LINE Corporation</strong>: alerts to the customer's own LINE group, only when the customer connects LINE.</li>
 <li><strong>Hosting and network</strong>: Cloudflare (secure tunnel) during the pilot; Render (Singapore) for production.</li>
 <li><strong>An email provider</strong>, to send sign-up confirmation and password-reset emails.</li>
@@ -115,6 +119,7 @@
 <li>ความคิดเห็นที่บุคคลต่าง ๆ แสดงไว้ใต้โพสต์ของเพจที่เชื่อมต่อ ได้แก่ ข้อความ เวลา รหัสความคิดเห็น รวมถึงชื่อและรหัสสาธารณะของผู้แสดงความคิดเห็นในกรณีที่ Facebook ให้ข้อมูลดังกล่าว</li>
 <li>บทสนทนาทาง Messenger ระหว่างบุคคลต่าง ๆ กับเพจที่เชื่อมต่อ ได้แก่ ข้อความ ไฟล์แนบ (ลิงก์รูปภาพหรือไฟล์) เวลา รหัสผู้ใช้เฉพาะเพจ (Page-scoped ID) ชื่อและรูปโปรไฟล์ที่ Facebook ส่งมา และโฆษณาที่เป็นจุดเริ่มต้นของบทสนทนา (หากมี)</li>
 <li>การตอบกลับและข้อความที่เพจส่งผ่าน Fang Labs</li>
+<li>เมื่อลูกค้าเปิดใช้การตอบกลับอัตโนมัติ คำตอบที่ผู้ดูแลเพจเคยตอบกลับความคิดเห็นและส่งทาง Messenger ไว้ก่อนหน้า เพื่อใช้เรียนรู้รูปแบบการตอบลูกค้าของเพจนั้น</li>
 </ul>
 <p>เราไม่เข้าถึงโปรไฟล์ส่วนตัว รายชื่อเพื่อน กลุ่ม Facebook หรือเพจใด ๆ ที่ไม่ได้เชื่อมต่อ</p>
 <h2 id="th-staff"><span class="n">3.</span>ข้อมูลที่พนักงานของธุรกิจสร้างขึ้นใน Fang Labs</h2>
@@ -124,16 +129,19 @@
 <li>เพื่อแสดงความคิดเห็นและข้อความแก่พนักงานของลูกค้าในกล่องข้อความร่วม พร้อมคิวงาน การมอบหมายงาน และเป้าหมายระยะเวลาการตอบกลับ</li>
 <li>เพื่อให้พนักงานตอบกลับในนามเพจ และเมื่อลูกค้าเปิดใช้งาน เพื่อซ่อนหรือลบความคิดเห็นที่เป็นสแปมหรือหลอกลวงบนเพจของลูกค้าเอง (การซ่อนสามารถยกเลิกได้ การลบต้องได้รับการยืนยันก่อน และทุกการดำเนินการจะถูกบันทึกไว้)</li>
 <li>เพื่อแจ้งเตือนทีมงานของลูกค้าเอง (เช่น ในกลุ่ม LINE ของลูกค้า) เมื่อมีข้อร้องเรียนเร่งด่วนหรือการตอบกลับล่าช้า ในกรณีที่ลูกค้าเชื่อมต่อ LINE</li>
-<li>เมื่อลูกค้าเปิดใช้ฟีเจอร์ AI เพื่อจัดประเภทความคิดเห็นและข้อความ (หัวข้อ ความรู้สึก และความเร่งด่วน) และร่างคำตอบให้พนักงานตรวจสอบก่อนส่ง</li>
+<li>เมื่อลูกค้าเปิดใช้ฟีเจอร์ AI เพื่อจัดประเภทความคิดเห็นและข้อความ (หัวข้อ ความรู้สึก และความเร่งด่วน) และร่างคำตอบให้แก่พนักงาน</li>
+<li>เมื่อลูกค้าเปิดใช้การตอบกลับอัตโนมัติ เพื่อส่งคำตอบบนเพจและทาง Messenger ของลูกค้าโดยอัตโนมัติ เฉพาะหัวข้อที่ลูกค้าเลือกไว้ (โปรดดูข้อ 5)</li>
 <li>เพื่อจัดทำรายงานแก่ลูกค้าเกี่ยวกับปริมาณ หัวข้อ และระยะเวลาการตอบกลับ</li>
 </ul>
 <p>เราไม่ขายข้อมูล ไม่ใช้ข้อมูลเพื่อการโฆษณา และไม่นำข้อมูลของลูกค้ารายหนึ่งไปรวมกับข้อมูลของลูกค้ารายอื่น ข้อมูลของลูกค้าแต่ละรายใช้เพื่อพัฒนาพื้นที่ทำงานของลูกค้ารายนั้นเท่านั้น</p>
 <h2 id="th-ai"><span class="n">5.</span>การประมวลผลด้วย AI</h2>
-<p>ฟีเจอร์ AI ปิดไว้เป็นค่าเริ่มต้น และผู้ดูแลระบบของลูกค้าเป็นผู้เปิดใช้งานแยกตามพื้นที่ทำงาน เมื่อเปิดใช้งาน ข้อความของความคิดเห็นและข้อความสนทนา (รวมถึงคำบรรยายโพสต์ที่เกี่ยวข้อง) จะถูกส่งไปยัง OpenAI เพื่อจัดประเภทและร่างคำตอบ ทั้งนี้ ตามข้อกำหนดการใช้งาน API ของ OpenAI ข้อมูลดังกล่าวจะไม่ถูกนำไปใช้ฝึกโมเดลของ OpenAI พนักงานจะตรวจสอบร่างคำตอบทุกครั้งก่อนส่ง และ AI จะไม่โพสต์สิ่งใดด้วยตนเอง</p>
+<p>ผู้ดูแลระบบของลูกค้าเป็นผู้เปิดใช้ฟีเจอร์ AI แยกตามพื้นที่ทำงาน เมื่อเปิดใช้งาน ข้อความของความคิดเห็นและข้อความสนทนา (รวมถึงคำบรรยายโพสต์ที่เกี่ยวข้อง) จะถูกส่งไปยัง OpenAI เพื่อจัดประเภทและร่างคำตอบ</p>
+<p>เมื่อธุรกิจเปิดใช้การตอบกลับอัตโนมัติ Fang Labs อาจส่งคำตอบบนเพจและทาง Messenger ของธุรกิจโดยอัตโนมัติ โดยไม่ต้องให้พนักงานตรวจสอบคำตอบแต่ละรายการก่อนส่ง คำตอบดังกล่าวจัดทำขึ้นตามรูปแบบที่เรียนรู้จากคำตอบที่ผู้ดูแลเพจนั้นเคยตอบไว้ และตามหลักเกณฑ์ที่ธุรกิจกำหนด และใช้เฉพาะข้อมูลที่ธุรกิจให้ไว้เท่านั้น ธุรกิจเป็นผู้เลือกหัวข้อที่ให้ระบบตอบกลับอัตโนมัติ (ระบบจะไม่ตอบข้อร้องเรียนโดยอัตโนมัติ เว้นแต่ธุรกิจจะเปิดใช้งาน) ธุรกิจสามารถหยุดการตอบกลับอัตโนมัติได้ทุกเมื่อ และคำตอบอัตโนมัติทุกรายการจะถูกบันทึกไว้ ทั้งนี้ ในการจัดทำคำตอบ เนื้อหาของความคิดเห็นและข้อความสนทนา รวมถึงคำตอบที่ผู้ดูแลเพจเคยตอบไว้ จะถูกส่งไปยัง OpenAI</p>
+<p>ตามข้อกำหนดการใช้งาน API ของ OpenAI ข้อมูลที่ส่งไปยัง OpenAI จะไม่ถูกนำไปใช้ฝึกโมเดลของ OpenAI</p>
 <h2 id="th-providers"><span class="n">6.</span>ผู้ให้บริการภายนอก (ผู้ประมวลผลข้อมูลช่วง)</h2>
 <ul>
 <li><strong>Meta Platforms</strong> (Facebook, Messenger): แหล่งที่มาของข้อมูลและช่องทางในการตอบกลับ</li>
-<li><strong>OpenAI</strong> (สหรัฐอเมริกา): จัดประเภทและร่างคำตอบด้วย AI เฉพาะเมื่อลูกค้าเปิดใช้ AI</li>
+<li><strong>OpenAI</strong> (สหรัฐอเมริกา): จัดประเภท ร่างคำตอบ และจัดทำคำตอบอัตโนมัติด้วย AI เฉพาะเมื่อลูกค้าเปิดใช้ฟีเจอร์ดังกล่าว</li>
 <li><strong>LINE Corporation</strong>: ส่งการแจ้งเตือนไปยังกลุ่ม LINE ของลูกค้าเอง เฉพาะเมื่อลูกค้าเชื่อมต่อ LINE</li>
 <li><strong>โฮสติ้งและเครือข่าย</strong>: Cloudflare (ช่องทางเชื่อมต่อที่ปลอดภัย) ในช่วงทดลองใช้งาน และ Render (สิงคโปร์) สำหรับการให้บริการจริง</li>
 <li><strong>ผู้ให้บริการอีเมล</strong> สำหรับส่งอีเมลยืนยันการสมัครใช้งานและอีเมลตั้งรหัสผ่านใหม่</li>
